@@ -1,9 +1,6 @@
-{{
-  config(
-    materialized = 'incremental',
-    on_schema_change = 'fail'
-    )
-}}
+{{ config(
+    materialized = 'view'
+) }}
 
 WITH src_reviews AS (
   SELECT * FROM {{ ref('src_reviews') }}
